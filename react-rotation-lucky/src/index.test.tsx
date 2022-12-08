@@ -1,7 +1,7 @@
-import { WheelComponent } from '.'
+import {LuckyWheel} from '.'
 
-describe('WheelComponent', () => {
+describe('LuckyWheel', () => {
   it('is truthy', () => {
-    expect(WheelComponent).toBeTruthy()
+    expect(LuckyWheel).toBeTruthy()
   })
 })
