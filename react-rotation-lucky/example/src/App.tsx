@@ -23,6 +23,14 @@ const App = () => {
           text: dataWheel?.turn_button?.text
         }
       ]
+    },
+    { radius: '50px', background: '#d64737' },
+    { radius: '45px', background: '#fff' },
+    { radius: '41px', background: '#f6c66f', pointer: true },
+    {
+      radius: '35px',
+      background: '#ffdea0',
+      fonts: [{ text: dataWheel?.turn_button?.text, fontSize: '18px', top: -18 }]
     }
   ]
   return (
@@ -43,17 +51,17 @@ const App = () => {
         height={400}
         blocks={[
           { padding: '20px', background: '#869cfa' },
-          {
-            padding: '20px',
-            imgs: [
-              {
-                src: dataWheel?.image_arrow,
-                width: '80px',
-                rotate: true,
-                top: '-20px'
-              }
-            ]
-          }
+          // {
+          //   padding: '20px',
+          //   imgs: [
+          //     {
+          //       src: dataWheel?.image_arrow,
+          //       width: '80px',
+          //       rotate: true,
+          //       top: '-20px'
+          //     }
+          //   ]
+          // }
         ]}
         onStart={() => {}}
         onEnd={() => {}}
