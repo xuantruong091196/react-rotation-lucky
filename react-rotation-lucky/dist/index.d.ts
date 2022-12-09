@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlockType, PrizeType, ButtonType } from './types/wheel';
+import { BlockType, PrizeType, ButtonType, DefaultStyleType, DefaultConfigType } from './types/wheel';
 interface TProps {
     onSuccess?: Function;
     onError?: Function;
@@ -11,6 +11,8 @@ interface TProps {
     buttons?: Array<ButtonType>;
     onStart: Function;
     onEnd: Function;
+    defaultConfig?: DefaultConfigType;
+    defaultStyle?: DefaultStyleType;
 }
 export default class LuckyWheelComponent extends React.Component<TProps> {
     myLucky: React.RefObject<any>;
