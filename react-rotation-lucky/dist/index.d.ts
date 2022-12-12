@@ -13,11 +13,18 @@ interface TProps {
     onEnd: Function;
     defaultConfig?: DefaultConfigType;
     defaultStyle?: DefaultStyleType;
+    urlApi?: string;
+    authToken?: string;
 }
-export default class LuckyWheelComponent extends React.Component<TProps> {
+interface IState {
+    dataWheel: any;
+    listDataImage: any;
+}
+export default class LuckyWheelComponent extends React.Component<TProps, IState> {
     myLucky: React.RefObject<any>;
     lucky: any;
     constructor(props: any);
+    handleGetWheelData(): Promise<void>;
     componentDidMount(): void;
     componentDidUpdate(prevProps: {
         width: number;
