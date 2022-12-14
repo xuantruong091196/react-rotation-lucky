@@ -33,27 +33,35 @@ export default class LuckyWheel extends Lucky {
   >
   private startCallback?: StartCallbackType
   private endCallback?: EndCallbackType
-  private Radius = 0 
-  private prizeRadius = 0 
-  private prizeDeg = 0 
-  private prizeAng = 0 
-  private rotateDeg = 0 
-  private maxBtnRadius = 0 
-  private startTime = 0 
-  private endTime = 0 
-  private stopDeg = 0 
-  private endDeg = 0 
-  private FPS = 16.6 
+  private Radius = 0
+  private prizeRadius = 0
+  private prizeDeg = 0
+  private prizeAng = 0
+  private rotateDeg = 0
+  private maxBtnRadius = 0
+  private startTime = 0
+  private endTime = 0
+  private stopDeg = 0
+  private endDeg = 0
+  private FPS = 16.6
 
   private step: 0 | 1 | 2 | 3 = 0
 
   private prizeFlag: number | undefined
   private ImageCache = new Map()
-  static defaultProps: { width: string; height: string; prizes: never[]; blocks: never[]; buttons: never[]; defaultStyle: {}; defaultConfig: {} }
+  static defaultProps: {
+    width: string
+    height: string
+    prizes: never[]
+    blocks: never[]
+    buttons: never[]
+    defaultStyle: {}
+    defaultConfig: {}
+  }
 
   /**
-   * @param config 
-   * @param data 
+   * @param config
+   * @param data
    */
   constructor(config: UserConfigType, data: LuckyWheelConfig) {
     super(config, {
@@ -92,7 +100,6 @@ export default class LuckyWheel extends Lucky {
     super.initLucky()
   }
 
-
   private initData(data: LuckyWheelConfig): void {
     this.$set(this, 'width', data.width)
     this.$set(this, 'height', data.height)
@@ -105,9 +112,7 @@ export default class LuckyWheel extends Lucky {
     this.$set(this, 'endCallback', data.end)
   }
 
-
   private initComputed() {
-    
     this.$computed(this, '_defaultConfig', () => {
       const config = {
         gutter: '0px',
@@ -471,6 +476,7 @@ export default class LuckyWheel extends Lucky {
           let fontSize = this.getLength(font.fontSize || _defaultStyle.fontSize)
           let fontStyle = font.fontStyle || _defaultStyle.fontStyle
           ctx.fillStyle = fontColor
+          // ctx.textAlign = font.textAlign as CanvasTextAlign
           ctx.font = `${fontWeight} ${fontSize >> 0}px ${fontStyle}`
           String(font.text)
             .split('\n')
@@ -480,6 +486,7 @@ export default class LuckyWheel extends Lucky {
                 getFontX(font, line),
                 getFontY(font, radius, lineIndex)
               )
+              ctx.textAlign = font.textAlign as CanvasTextAlign
             })
         })
     })

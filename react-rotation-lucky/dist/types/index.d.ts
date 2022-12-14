@@ -7,6 +7,7 @@ export declare type FontItemType = {
     fontStyle?: string;
     fontWeight?: string;
     lineHeight?: string;
+    textAlign?: 'center' | 'end' | 'left' | 'right' | 'start';
 };
 export declare type FontExtendType = {
     wordWrap?: boolean;

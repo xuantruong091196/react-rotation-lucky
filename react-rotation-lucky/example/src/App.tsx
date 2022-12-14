@@ -51,17 +51,6 @@ const App = () => {
         height={400}
         blocks={[
           { padding: '20px', background: '#869cfa' },
-          // {
-          //   padding: '20px',
-          //   imgs: [
-          //     {
-          //       src: dataWheel?.image_arrow,
-          //       width: '80px',
-          //       rotate: true,
-          //       top: '-20px'
-          //     }
-          //   ]
-          // }
         ]}
         onStart={() => {}}
         onEnd={() => {}}

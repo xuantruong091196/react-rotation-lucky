@@ -7,6 +7,7 @@ export type FontItemType = {
   fontStyle?: string
   fontWeight?: string
   lineHeight?: string
+  textAlign?: 'center' | 'end' | 'left' | 'right' | 'start'
 }
 
 export type FontExtendType = {
@@ -64,4 +65,8 @@ export type UniImageType = {
   height: number
 }
 
-export type Tuple<T, Len extends number, Res extends T[] = []> = Res['length'] extends Len ? Res : Tuple<T, Len, [...Res, T]>
+export type Tuple<
+  T,
+  Len extends number,
+  Res extends T[] = []
+> = Res['length'] extends Len ? Res : Tuple<T, Len, [...Res, T]>

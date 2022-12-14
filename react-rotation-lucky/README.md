@@ -145,6 +145,8 @@ class Example extends Component {
 
 `      lineHeight?: string | number` chiều cao dòng chữ Mặc định: cỡ chữ
 
+`      textAlign?: 'center' | 'end' | 'left' | 'right' | 'start'` vị trí của chữ Mặc định: end
+
 `   imgs?: Array<object>` hình ảnh nút
 
 `      src: string` đường dẫn hình ảnh

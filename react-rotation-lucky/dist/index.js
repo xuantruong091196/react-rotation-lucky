@@ -1138,6 +1138,7 @@ var LuckyWheel = /*#__PURE__*/function (_Lucky) {
         ctx.font = fontWeight + " " + (fontSize >> 0) + "px " + fontStyle;
         String(font.text).split('\n').forEach(function (line, lineIndex) {
           ctx.fillText(line, getFontX(font, line), getFontY(font, radius, lineIndex));
+          ctx.textAlign = font.textAlign;
         });
       });
     });
