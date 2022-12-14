@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import LuckyWheel from './lib/wheel'
 import LuckyWheelConfig, {
   BlockType,
@@ -60,19 +61,27 @@ export default class LuckyWheelComponent extends React.Component<
     } catch (err) {}
   }
   componentDidMount() {
+    let canvas = ReactDOM.findDOMNode(
+      (this.myLucky as unknown) as HTMLCanvasElement
+    )
     if (this.lucky) {
       return
     }
     if (this?.props?.urlApi && this?.props?.authToken) {
     }
-    this.myLucky.current.setAttribute('package', `react-rotation-lucky@v1.1.0`)
-    try {
-      this.initLucky()
-      this?.props?.onSuccess && this.props?.onSuccess()
-    } catch (err) {
-      this?.props?.onError && this?.props?.onError(err)
-    } finally {
-      this.props?.onFinally && this?.props?.onFinally()
+    if (canvas) {
+      this.myLucky.current.setAttribute(
+        'package',
+        `react-rotation-lucky@v1.1.6`
+      )
+      try {
+        this.initLucky()
+        this?.props?.onSuccess && this.props?.onSuccess()
+      } catch (err) {
+        this?.props?.onError && this?.props?.onError(err)
+      } finally {
+        this.props?.onFinally && this?.props?.onFinally()
+      }
     }
   }
   componentDidUpdate(prevProps: {

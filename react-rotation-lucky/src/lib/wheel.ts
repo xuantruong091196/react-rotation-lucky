@@ -476,8 +476,8 @@ export default class LuckyWheel extends Lucky {
           let fontSize = this.getLength(font.fontSize || _defaultStyle.fontSize)
           let fontStyle = font.fontStyle || _defaultStyle.fontStyle
           ctx.fillStyle = fontColor
-          // ctx.textAlign = font.textAlign as CanvasTextAlign
           ctx.font = `${fontWeight} ${fontSize >> 0}px ${fontStyle}`
+          ctx.textAlign = font.textAlign as CanvasTextAlign
           String(font.text)
             .split('\n')
             .forEach((line, lineIndex) => {
@@ -486,7 +486,6 @@ export default class LuckyWheel extends Lucky {
                 getFontX(font, line),
                 getFontY(font, radius, lineIndex)
               )
-              ctx.textAlign = font.textAlign as CanvasTextAlign
             })
         })
     })
