@@ -4,7 +4,7 @@ import {
   ConfigType,
   UserConfigType,
   ImgItemType,
-  ImgType,
+  ImgType
 } from '../types/index'
 import { defineReactive } from '../observer'
 import Watcher, { WatchOptType } from '../observer/watcher'
@@ -213,6 +213,7 @@ export default class Lucky {
     const { flag, dpr } = this.config
     if (['WEB', 'MP-WX'].includes(flag)) {
       drawImg = imgObj
+      drawImg.className=""
     } else if (['UNI-H5', 'UNI-MP', 'TARO-H5', 'TARO-MP'].includes(flag)) {
       type OldImageType = ImgType & { path: CanvasImageSource }
       drawImg = (imgObj as OldImageType).path

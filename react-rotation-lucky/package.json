@@ -1,6 +1,6 @@
 {
   "name": "react-rotation-lucky",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "React wheel for game in QSoft",
   "license": "MIT",
   "repository": "xuantruong09111996/react-rotation-lucky",
@@ -20,6 +20,9 @@
   "author": {
     "name": "xuantruong09111996",
     "email": "theend96nd@gmail.com"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://github.com/xuantruong09111996/react-rotation-lucky",
   "scripts": {
